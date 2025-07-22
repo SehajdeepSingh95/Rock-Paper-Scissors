@@ -50,3 +50,20 @@ function resetScore() {
   `;
   document.querySelector('.moves-chosen').innerHTML = '';
 }
+
+let autoPlaying =false;
+let IntervalId;
+
+function autoPlay(){
+  if (autoPlaying===false){
+  IntervalId=setInterval(function(){
+  const your_choice=computer_choice();
+  makeMove(your_choice);
+  },1000);
+  autoPlaying=! autoPlaying;
+}
+else{
+  clearInterval(IntervalId);
+  autoPlaying=! autoPlaying;
+}
+}
