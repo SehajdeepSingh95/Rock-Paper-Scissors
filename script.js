@@ -67,3 +67,14 @@ else{
   autoPlaying=! autoPlaying;
 }
 }
+
+
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'r' || event.key === 'R') {
+    makeMove('rock');
+  } else if (event.key === 'p' || event.key === 'P') {
+    makeMove('paper');
+  } else if (event.key === 's' || event.key === 'S') {
+    makeMove('scissors');
+  }
+});
